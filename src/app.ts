@@ -6,6 +6,7 @@ import { auth } from './lib/auth';
 import { postRouter } from './modules/post/post.route';
 import { commentRouter } from './modules/comment/comment.route';
 import errorHandler from './middlewares/globalErrorHandler';
+import { notFound } from './middlewares/notFound';
 
 
 const app:Application = express()
@@ -27,6 +28,7 @@ app.get('/', (req,res) => {
     res.send(`<h1>THINKORA (চিন্তার আলো) server is running</h1>`)
 })
 
+app.use(notFound)
 app.use(errorHandler)
 
 export default app
