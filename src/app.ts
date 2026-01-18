@@ -5,6 +5,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from './lib/auth';
 import { postRouter } from './modules/post/post.route';
 import { commentRouter } from './modules/comment/comment.route';
+import errorHandler from './middlewares/globalErrorHandler';
 
 
 const app:Application = express()
@@ -25,5 +26,7 @@ app.use('/comments', commentRouter)
 app.get('/', (req,res) => {
     res.send(`<h1>THINKORA (চিন্তার আলো) server is running</h1>`)
 })
+
+app.use(errorHandler)
 
 export default app
