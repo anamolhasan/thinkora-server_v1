@@ -9,6 +9,11 @@ router.get(
     postController.getAllPost
 );
 router.get(
+    '/status',
+    auth(UserRole.ADMIN),
+    postController.getStatus
+)
+router.get(
   "/my-posts",
   auth(UserRole.USER, UserRole.ADMIN),
   postController.getMyPosts,
