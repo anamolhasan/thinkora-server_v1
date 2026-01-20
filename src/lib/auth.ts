@@ -34,6 +34,12 @@ export const auth = betterAuth({
         // requireEmailVerification:true,
         minPasswordLength:6
     },
+    socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID as string, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, 
+        }, 
+    },
     // email verification video 24-4/24-5
 //       emailVerification: {
 //     sendVerificationEmail: async ( { user, url, token }, request) => {

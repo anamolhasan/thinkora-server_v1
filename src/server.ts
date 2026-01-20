@@ -20,3 +20,8 @@ async function main() {
 }
 
 main()
+
+// client id
+// 1009991701426-642e28t11e06of6pkmp6pd6hccej5rbg.apps.googleusercontent.com
+// client secret 
+// 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
